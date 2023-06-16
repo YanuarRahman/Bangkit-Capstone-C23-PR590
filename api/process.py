@@ -25,8 +25,11 @@ def get_menu_data(conn, database_name, collection_name):
         food_id = item["_id"]
         name = item["name"]
         spice_level = item["spiceLevel"]
-        image_url = item["imageUrl"]
-        ingredients = item["ingredients"]
+        image_url = item["image"]
+        ingredients = item["ingredient"]
+        description = item["description"]
+        price = item["price"]
+        richDescription = item["richDescription"]
 
         # Inisialisasi nilai kolom bahan
         pepperoni = 0
