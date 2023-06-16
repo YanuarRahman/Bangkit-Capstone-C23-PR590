@@ -13,7 +13,7 @@ import pandas as pd
 
 def get_menu_data(conn, database_name, collection_name):
     # Koneksi ke MongoDB
-    client = pymongo.MongoClient(conn)
+    client = MongoClient(conn)
     db = client[database_name]
     collection = db[collection_name]
 
