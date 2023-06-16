@@ -134,7 +134,7 @@ def preprocess(menu_df, user_df):
 
 def get_recommended_foods(predictions, menu):
     sorted_index = np.argsort(-predictions,axis=0).reshape(-1).tolist()
-    top_index = sorted_index[:3]
+    top_index = sorted_index[:4]
     return [menu[idx] for idx in top_index]
     # sorted_predictions   = predictions[sorted_index]
     # sorted_items = menu_ids.iloc[sorted_index, :].reset_index(drop=True)
