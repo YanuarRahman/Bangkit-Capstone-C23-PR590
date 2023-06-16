@@ -40,6 +40,8 @@ def get_menu_data(conn, database_name, collection_name):
     for i, item in enumerate(items):
         # Ubah _id menjadi string
         item['_id'] = str(item['_id'])
+        if 'category' in item:
+            item['category'] = str(item['category'])
         result[i] = item
         
         if 'spiceLevel' in item:
@@ -86,8 +88,7 @@ def parse_user_data(user):
       "saus": "saus",
       "merica": "merica",
       "jamur": "jamur",
-      "cheese": "keju",
-      "vegetable": "sayur"
+      "cheese": "keju"
   }
       
   if 'spiceLevel' in user:
