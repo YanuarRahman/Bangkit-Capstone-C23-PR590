@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="12dp" /> <!-- Background color of the search view -->
+    <solid android:color="#EAEAEA" />
+    <stroke
+        android:width="2dp"
+        android:color="@color/primaryColorRecoMenu" />
+</shape>

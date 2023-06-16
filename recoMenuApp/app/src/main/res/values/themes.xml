@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.RecoMenuApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryColorRecoMenu</item>
+        <item name="colorPrimaryVariant">@color/primaryColorRecoMenu</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primaryColorRecoMenu</item>
+        <item name="colorSecondaryVariant">@color/primaryColorRecoMenu</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="TextContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextContent.small">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextContent.medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextContent.medium.bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContent.large">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextContent.large.bold">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-bold</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="hintEnabled">false</item>
+        <item name="endIconDrawable">@drawable/ic_baseline_arrow_drop_down_24</item>
+        <item name="errorEnabled">false</item>
+    </style>
+
+</resources>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".ui.CheckoutFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCheckout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvPesanan"
+            style="@style/TextContent.large.bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/pesanan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvPesanan"
+            android:id="@+id/llContent">
+
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:src="@drawable/banner_home"/>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                tools:text="Chicken Katsu"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/ivProduct"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                tools:text="25000"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/ivProduct"/>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/tvPrice"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/llCount"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toEndOf="@id/ivProduct"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabMinus"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/ic_minus"
+                    android:background="@drawable/ic_plus"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvCount"
+                    android:layout_width="wrap_content"
+                    android:textSize="40sp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_height="wrap_content"
+                    tools:text="99"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabPlus"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingTop="30dp"
+            app:layout_constraintBottom_toTopOf="@id/btnCheckout">
+
+            <TextView
+                android:id="@+id/tvHargaSum"
+                style="@style/TextContent.medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/harga"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/hargaSum"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hargaSum"
+                style="@style/TextContent.medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="end"
+                app:layout_constraintStart_toEndOf="@id/tvHargaSum"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3 Hours"/>
+
+            <TextView
+                android:id="@+id/tvPpn"
+                style="@style/TextContent.medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/ppn"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ppn"
+                app:layout_constraintTop_toBottomOf="@id/tvHargaSum" />
+
+            <TextView
+                android:id="@+id/ppn"
+                style="@style/TextContent.medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="end"
+                app:layout_constraintStart_toEndOf="@id/tvPpn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hargaSum"
+                tools:text="Rp50000"/>
+
+            <TextView
+                android:id="@+id/tvTotalPrice"
+                style="@style/TextContent.medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/total_pembayaran"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/totalPrice"
+                app:layout_constraintTop_toBottomOf="@id/tvPpn" />
+
+            <TextView
+                android:id="@+id/totalPrice"
+                style="@style/TextContent.medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="end"
+                app:layout_constraintStart_toEndOf="@id/tvTotalPrice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ppn"
+                tools:text="Rp150000"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_primary"
+            android:text="@string/checkout"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:id="@+id/clPaymentDetail">
+
+        <ImageView
+            android:id="@+id/ivBackPaymentDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvScan"
+            android:layout_width="wrap_content"
+            android:textSize="24sp"
+            style="@style/TextContent.large.bold"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/silahkan_scan_barcode_qris"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBackPaymentDetail" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btnFinish"
+            app:layout_constraintTop_toBottomOf="@id/tvScan"
+            android:src="@drawable/qrcode"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnFinish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn_primary"
+            android:text="@string/selesai"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
